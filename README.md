@@ -12,7 +12,15 @@ https://Rigtig123.github.io/Rigs-2-Ds-Blog/
 _powered by [fastpages](https://github.com/fastai/fastpages)_
 
 
-## What To Do Next?
+## Group Members Github
+
+People | Github Profile | Commits |
+-------------  | -------------- | -------------- |
+Jeffery  | [Github profile]() |[Commits](https://github.com/ChiefGuap/p1-DataPirates/commits?author=BillyCherres)| 
+Luke  | [Github profile](https://rigtig123.github.io/Rigs-2-Ds-Blog/) |[Commits](https://github.com/ChiefGuap/p1-DataPirates/commits?author=ChiefGuap)| 
+Ethan |[Github profile]() |[Commits](https://github.com/ChiefGuap/p1-DataPirates/commits?author=samkoenig9)| 
+APCSP | [Github profile]() |[Commits](https://github.com/ChiefGuap/p1-DataPirates/commits?author=dylanroman)| 
+
 
 Great!  You have setup your repo.  Now its time to start writing content.  Some helpful links:
 
