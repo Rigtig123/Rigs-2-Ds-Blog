@@ -14,6 +14,15 @@ _powered by [fastpages](https://github.com/fastai/fastpages)_
 
 ## What To Do Next?
 
+People | Github Profile | Commits |
+-------------  | -------------- | -------------- |
+Billy Cherres | [Github profile](https://github.com/BillyCherres) |[Commits](https://github.com/ChiefGuap/p1-DataPirates/commits?author=BillyCherres)| 
+Raq Alam  | [Github profile](https://github.com/ChiefGuap) |[Commits](https://github.com/ChiefGuap/p1-DataPirates/commits?author=ChiefGuap)| 
+Sam Lonalella |[Github profile](https://github.com/samkoenig9) |[Commits](https://github.com/ChiefGuap/p1-DataPirates/commits?author=samkoenig9)| 
+Dylan Gilmore  | [Github profile](https://github.com/dylanroman) |[Commits](https://github.com/ChiefGuap/p1-DataPirates/commits?author=dylanroman)| 
+Dane Vestal  | [Github profile](https://github.com/D1935827V) |[Commits](https://github.com/ChiefGuap/p1-DataPirates/commits?author=D1935827V)| 
+
+
 Great!  You have setup your repo.  Now its time to start writing content.  Some helpful links:
 
 - [Writing Blogs With Jupyter](https://github.com/fastai/fastpages#writing-blog-posts-with-jupyter)
