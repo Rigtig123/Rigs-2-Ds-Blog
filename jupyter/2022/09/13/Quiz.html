@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      6 min read
     
 </span></p>
 
@@ -138,8 +138,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Planning: I wanted to make a Geogrpahy quiz using country outlines with 4 options per question and 3 modes: Easy, Normal, and Hard mode. I finished two of the modes. Hard mode is coming soon.</p>
-<p>I made the quiz completely on my own through trial and error. The first thing I did was learn how to bind buttons with screens so the user could see if they got it wrong in Easy mode. The Normal Mode I used an On Event in the Ui controls and for each button I made sure it would show up if it was correct or incorrect right away and I put a timer on the set screen so the user could see if they got it right before the screen changed to the next question. I also added an info about why I created it. I also made a Settings page were they could press the music button to turn off and on the music if they wanted to listen to it while taking the quiz.</p>
+<p>Planning: I wanted to make a Geogrpahy quiz using country outlines with 4 options per question and 3 modes: Easy, Normal, and Hard mode. I finished three of the modes.</p>
+<p>I made the quiz completely on my own through trial and error. The first thing I did was learn how to bind buttons with screens so the user could see if they got it wrong in Easy mode. The Normal Mode I used an On Event in the Ui controls and for each button I made sure it would show up if it was correct or incorrect right away and I put a timer on the set screen so the user could see if they got it right before the screen changed to the next question. I also added an info about why I created it. I also made a Settings page were they could press the music button to turn off and on the music if they wanted to listen to it while taking the quiz. I tried to make each mode as far as code be more and more difficult to code and more complex. I did it all myself and it took about 6 hours.</p>
 
 </div>
 </div>
@@ -396,8 +396,353 @@ window.onload = wrap_img;
   <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_background/gametime.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
   <span class="n">textLabel</span><span class="p">(</span><span class="s2">"Musicc"</span><span class="p">,</span> <span class="s2">"Hi"</span><span class="p">);</span>
 <span class="p">});</span>
-<span class="n">onEvent</span><span class="p">(</span><span class="s2">"Musicc"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">stopSound</span><span class="p">(</span><span class="s2">"sound://category_background/gametime.mp3"</span><span class="p">);</span>
+<span class="n">var</span> <span class="n">Hardscore</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"Cape"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+  <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+  <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_male_voiceover/correct_male.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button1"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button2"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button3"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button4"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"image26"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"Sey"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"Mauritius"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"Maldives"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"Cape"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image14"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"Sey"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">0</span><span class="p">;</span>
+  <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+  <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_female_voiceover/wrong_female.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button1"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button2"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button3"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button4"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"image26"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"Sey"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"Mauritius"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"Maldives"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"Cape"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image14"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"Mauritius"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">0</span><span class="p">;</span>
+  <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+  <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_female_voiceover/wrong_female.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button1"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button2"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button3"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button4"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"image26"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"Sey"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"Mauritius"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"Maldives"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"Cape"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image14"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"Maldives"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">0</span><span class="p">;</span>
+  <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+  <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_female_voiceover/wrong_female.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button1"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button2"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button3"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button4"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"image26"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"Sey"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"Mauritius"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"Maldives"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"Cape"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image14"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"button8"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+  <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+  <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_female_voiceover/wrong_female.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button9"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button10"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button11"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button12"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"image28"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button5"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button6"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button7"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button8"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image27"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"button3"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+  <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+  <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_male_voiceover/correct_male.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button5"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button6"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button7"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button8"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"image27"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button1"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button2"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button3"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button4"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image26"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"button1"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">0</span><span class="p">;</span>
+  <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+  <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_female_voiceover/wrong_female.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button5"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button6"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button7"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button8"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"image27"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button1"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button2"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button3"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button4"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image26"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"button2"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">0</span><span class="p">;</span>
+  <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+  <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_female_voiceover/wrong_female.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button5"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button6"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button7"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button8"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"image27"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button1"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button2"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button3"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button4"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image26"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"button4"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">0</span><span class="p">;</span>
+  <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+  <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_female_voiceover/wrong_female.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button5"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button6"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button7"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button8"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"image27"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button1"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button2"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button3"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button4"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image26"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"button5"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">0</span><span class="p">;</span>
+  <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+  <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_female_voiceover/wrong_female.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button9"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button10"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button11"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button12"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"image28"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button5"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button6"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button7"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button8"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image27"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"button6"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">0</span><span class="p">;</span>
+  <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+  <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_female_voiceover/wrong_female.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button9"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button10"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button11"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button12"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"image28"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button5"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button6"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button7"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button8"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image27"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"button7"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">0</span><span class="p">;</span>
+  <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+  <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_female_voiceover/wrong_female.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button9"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button10"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button11"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button12"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"image28"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button5"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button6"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button7"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button8"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image27"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"button9"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+  <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+  <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_male_voiceover/correct_male.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button13"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button14"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button15"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button16"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"image29"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button9"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button10"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button11"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button12"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image28"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"button10"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">0</span><span class="p">;</span>
+  <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+  <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_female_voiceover/wrong_female.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button13"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button14"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button15"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button16"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"image29"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button9"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button10"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button11"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button12"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image28"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"button11"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">0</span><span class="p">;</span>
+  <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+  <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_female_voiceover/wrong_female.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button13"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button14"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button15"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button16"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"image29"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button9"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button10"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button11"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button12"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image28"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"button12"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">0</span><span class="p">;</span>
+  <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+  <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_female_voiceover/wrong_female.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button13"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button14"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button15"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"button16"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"image29"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button9"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button10"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button11"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button12"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image28"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"button13"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">0</span><span class="p">;</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+    <span class="n">setProperty</span><span class="p">(</span><span class="s2">"Scoree"</span><span class="p">,</span> <span class="s2">"font-size"</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span>
+    <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"font-size"</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span>
+    <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">,</span> <span class="mi">150</span><span class="p">);</span>
+    <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_female_voiceover/wrong_female.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button16"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button15"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button14"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button13"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image29"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"zzzz"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"label12"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image9"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"button14"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+    <span class="n">setProperty</span><span class="p">(</span><span class="s2">"Scoree"</span><span class="p">,</span> <span class="s2">"font-size"</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span>
+    <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"font-size"</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span>
+    <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">,</span> <span class="mi">150</span><span class="p">);</span>
+    <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_male_voiceover/correct_male.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button16"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button15"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button14"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button13"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image29"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"zzzz"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"label12"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image9"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"button15"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">0</span><span class="p">;</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+    <span class="n">setProperty</span><span class="p">(</span><span class="s2">"Scoree"</span><span class="p">,</span> <span class="s2">"font-size"</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span>
+    <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"font-size"</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span>
+    <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">,</span> <span class="mi">150</span><span class="p">);</span>
+    <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_female_voiceover/wrong_female.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button16"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button15"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button14"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button13"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image29"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"zzzz"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"label12"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image9"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"button16"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Hardscore</span> <span class="o">=</span> <span class="n">Hardscore</span><span class="o">+</span><span class="mi">0</span><span class="p">;</span>
+  <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">Hardscore</span><span class="p">);</span>
+    <span class="n">setProperty</span><span class="p">(</span><span class="s2">"Scoree"</span><span class="p">,</span> <span class="s2">"font-size"</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span>
+    <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"font-size"</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span>
+    <span class="n">setProperty</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">,</span> <span class="mi">150</span><span class="p">);</span>
+    <span class="n">playSound</span><span class="p">(</span><span class="s2">"sound://category_female_voiceover/wrong_female.mp3"</span><span class="p">,</span> <span class="n">false</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button16"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button15"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button14"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"button13"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image29"</span><span class="p">);</span>
+    <span class="n">showElement</span><span class="p">(</span><span class="s2">"zzzz"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"label12"</span><span class="p">);</span>
+    <span class="n">hideElement</span><span class="p">(</span><span class="s2">"image9"</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="n">onEvent</span><span class="p">(</span><span class="s2">"zzzz"</span><span class="p">,</span> <span class="s2">"click"</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="n">setScreen</span><span class="p">(</span><span class="s2">"screen1"</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 
