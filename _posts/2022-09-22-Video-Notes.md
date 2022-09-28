@@ -1,0 +1,4 @@
+Video Notes
+
+
+I watched the video and there were a lot of clear talking points that I could take away from and learn. The first thing I realized that I had to do was to focus onreducing academic stress on myself. I should use resources like peers and teachers to help better myself and ask for help. I also need to form habits that I can carry with me later on in life because jsut because I am getting through now with my habits, does not mean I can't improve. I also need to have the right attitude which ishaving a growth mindset. Ms Naidu says the biggest problem at Del Norte is collaboration because there are many kids who work hard and are commmitted. It could be way easier however, if they just talked. 
