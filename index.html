@@ -74,6 +74,88 @@ window.onload = wrap_img;
       <div class="wrapper">
         <div class="home"><p>&lt;!DOCTYPE html&gt;</p>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+    <style>
+      #issMap {
+        height: 360px;
+      }
+    </style>
+
+    <title>Fetch JSON from API and map lat lon</title>
+  </head>
+  <body>
+    <h1>Where is the ISS?</h1>
+
+    <p>
+      latitude: <span id="lat"></span>°<br />
+      longitude: <span id="lon"></span>° <br />
+      altitude: <span id="altitude"></span> miles
+    </p>
+
+    <div id="issMap"></div>
+
+    <script>
+      // Making a map and tiles
+      const mymap = L.map('issMap').setView([0, 0], 1);
+      const attribution =
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+
+      const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+      const tiles = L.tileLayer(tileUrl, { attribution });
+      tiles.addTo(mymap);
+
+      // Making a marker with a custom icon
+      const issIcon = L.icon({
+        iconUrl: 'iss200.png',
+        iconSize: [50, 32],
+        iconAnchor: [25, 16]
+      });
+      let marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);
+
+      const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
+
+      let firstTime = true;
+
+      async function getISS() {
+        const response = await fetch(api_url);
+        const data = await response.json();
+        const { latitude, longitude, altitude } = data;
+
+        const aspect = 1.5625;
+        const w = (altitude * aspect) / 10;
+        const h = altitude / 10;
+        issIcon.options.iconSize = [w, h];
+        issIcon.options.iconAnchor = [w / 2, h / 2];
+
+        // Size not changing unless I remove and re-add marker?
+        // TODO: There has got to be a better way!
+        // mymap.removeLayer(marker);
+        // marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);
+
+        marker.setLatLng([latitude, longitude]);
+
+        if (firstTime) {
+          mymap.setView([latitude, longitude], 2);
+          firstTime = false;
+        }
+        document.getElementById('lat').textContent = latitude.toFixed(2);
+        document.getElementById('lon').textContent = longitude.toFixed(2);
+        document.getElementById('altitude').textContent = altitude.toFixed(2);
+      }
+
+      getISS();
+      setInterval(getISS, 1000);
+    </script>
+  </body>
+</html>
+
+<p>&lt;!DOCTYPE html&gt;</p>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -198,20 +280,20 @@ window.onload = wrap_img;
    <!-- Assemble final sorted posts array -->
   
   <ul class="post-list"><li><h3>
+    <a class="post-link" href="/Rigs-2-Ds-Blog/jupyter/2022/11/09/Playing-around-Java-Script-copy.html">
+    Playing around with Java Script
+    </a>
+</h3><p class="post-meta-description">Code stuff.</p><p class="post-meta">Nov 9, 2022</p>
+</li><li><h3>
+    <a class="post-link" href="/Rigs-2-Ds-Blog/jupyter/2022/11/09/Dcitionaries-Lists-and-Dictionaries.html">
+    Python Lists and Dictionaries
+    </a>
+</h3><p class="post-meta-description">Code.</p><p class="post-meta">Nov 9, 2022</p>
+</li><li><h3>
     <a class="post-link" href="/Rigs-2-Ds-Blog/2022/11/07/Corrections.html">
     Corrections
     </a>
 </h3><p class="post-meta">Nov 7, 2022</p>
-</li><li><h3>
-    <a class="post-link" href="/Rigs-2-Ds-Blog/jupyter/2022/11/06/Playing-around-Java-Script-copy.html">
-    Playing around with Java Script
-    </a>
-</h3><p class="post-meta-description">Code stuff.</p><p class="post-meta">Nov 6, 2022</p>
-</li><li><h3>
-    <a class="post-link" href="/Rigs-2-Ds-Blog/jupyter/2022/11/06/Dcitionaries-Lists-and-Dictionaries.html">
-    Python Lists and Dictionaries
-    </a>
-</h3><p class="post-meta-description">Code.</p><p class="post-meta">Nov 6, 2022</p>
 </li><li><h3>
     <a class="post-link" href="/Rigs-2-Ds-Blog/2022/10/18/Corrections.html">
     Title
