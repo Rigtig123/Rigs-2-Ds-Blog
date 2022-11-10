@@ -55,7 +55,45 @@ Corrections: The answer is C because according to collegeboard, "A student name 
 
 ![]({{site.baseurl}}/images/7.png "https://github.com/fastai/fastpages")
 
+What I did wrong: According to Collegeboard it is not C because,"Using a list does not prevent a program from changing the value of a variable." This means what I put is simply not true because I did not understand the nature of a list. 
+
+Corrections: The correct answer is B because according to collegeboard, "Using a list as a data abstraction can result in a program that is easier to develop and maintain. It is easier to apply the same algorithm to every element in a list than to apply the same algorithm to many separate variables." This shows how a list can help easily develop and maintain as a data abstraction of a program.
+
+ ![]({{site.baseurl}}/images/8.png "https://github.com/fastai/fastpages")
+
+ What I did wrong: 
+The character "e" is the character at index 2 of the string element at index 2 in wordList. This is wrong because it is clearly not index 3 of the wordlist. 
+
+ Corrections: According to collegeboard the answer is C because "The element at index 3 in wordList is "ghi". The character at index 2 of "ghi" is "h"." No explanation when reading it, it makes perfect sense in retrospect. 
+ 
+
+![]({{site.baseurl}}/images/9.png "https://github.com/fastai/fastpages")
+
+What I did wrong: I selected answer B but it is wrong because according to collegeboard, "The last assignment statement assigns a copy of myList to yourList, so the contents of yourList are changed." So therefore it is the opposite of what I actually did.
+
+Correction: According to collegeboard, "The last assignment statement assigns a copy of myList to yourList. Since myList contains [10, 30, 50, 70], yourList will also contain [10, 30, 50, 70]." which basically means that due to the function your list will also have the odd numbers so it is therefore A. 
+
+![]({{site.baseurl}}/images/10.png "https://github.com/fastai/fastpages")
+
+What I did wrong: I put C but according to collegeboard, it id wrong because, "This code segment assigns maxPS the value 50 when time > 120 and assigns maxPS the value 30 otherwise." This basically means 120 was not put in the right order because the if-else statement was wrong. 30 and 50 should be switched. 
+
+Correction: The correct answer is D and collegeboard says, "This code segment uses the IF statement to set maxPS to 30 when time > 120 and uses the ELSE statement to set maxPS to 50 otherwise." This makes more sense because 50 should come after the else statement. 
+
+![]({{site.baseurl}}/images/11.png "https://github.com/fastai/fastpages")
+
+Corrections: According to collegeboard, " The first three statements assign values to the variables. Since num1 < num2 evaluates to false, the body of the ELSE block is executed and num3 is assigned the value 4. Since num2 ≥ num3 evaluates to true, the body of the second IF block is executed and num1 is assigned the value 8. Lastly, sum is assigned the value of 8 + 4 + 4, or 16." I instead did 8 + 4 and just that. I forgot to include the other 4. 
+
+![]({{site.baseurl}}/images/12.png "https://github.com/fastai/fastpages")
+
+What I did wrong: It is clear when reading "The code segment iterates through each element in the list, incrementing count1 for each positive value and incrementing count2 otherwise. There are only two positive values in the list, not five." that the values I picked did not match up. 
+
+Corrections: According to collegeboard, "The code segment iterates through each element in the list, incrementing count1 for each positive value and incrementing count2 otherwise. The list contains two positive values, so count1 is 2 and count2 is 3." This makes a lot more sense when you look at the coding.
+
+![]({{site.baseurl}}/images/13.png "https://github.com/fastai/fastpages")
+
+Corrections: C is clearly the only option correct because according to collegeboard, "The first three statements assign values to the variables. The fourth statement assigns the value of y (which is 50) to x. The fifth statement assigns the value of z (which is 75) to y. The sixth statement assigns the value of x (which is 50) to z. Therefore, x and z both have the value 50." When the statement is executed, the top line of Y points to x which has a value of 25 which therefore puts the number under 50. 
 
 
+![]({{site.baseurl}}/images/14.png "https://github.com/fastai/fastpages")
 
-
+Corrections: The Answer I put was B because I had no idea what to do, but the answer is A because according to collegeboard, "This statement will correctly form the initials. It uses calls to prefix to obtain the first letters of each name, then uses a call to concat to concatenate the two letters in the correct order." This now helps me understand how to cormat initials and names. 
