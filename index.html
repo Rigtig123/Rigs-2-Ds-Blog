@@ -22,7 +22,7 @@ image: images/logo.png
     ></script>
     <style>
       #issMap {
-        height: 360px;
+        height: 180px;
       }
     </style>
 
@@ -33,8 +33,7 @@ image: images/logo.png
 
     <p>
       latitude: <span id="lat"></span>°<br />
-      longitude: <span id="lon"></span>° <br />
-      altitude: <span id="altitude"></span> miles
+      longitude: <span id="lon"></span>°
     </p>
 
     <div id="issMap"></div>
@@ -50,12 +49,12 @@ image: images/logo.png
       tiles.addTo(mymap);
 
       // Making a marker with a custom icon
-     const issIcon = L.icon({
+      const issIcon = L.icon({
         iconUrl: 'iss200.png',
         iconSize: [50, 32],
         iconAnchor: [25, 16]
       });
-      let marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);
+      const marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);
 
       const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
 
@@ -64,31 +63,19 @@ image: images/logo.png
       async function getISS() {
         const response = await fetch(api_url);
         const data = await response.json();
-        const { latitude, longitude, altitude } = data;
-
-        const aspect = 1.5625;
-        const w = (altitude * aspect) / 10;
-        const h = altitude / 10;
-        issIcon.options.iconSize = [w, h];
-        issIcon.options.iconAnchor = [w / 2, h / 2];
-
-        // Size not changing unless I remove and re-add marker?
-        // TODO: There has got to be a better way!
-        // mymap.removeLayer(marker);
-        // marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);
+        const { latitude, longitude } = data;
 
         marker.setLatLng([latitude, longitude]);
-
         if (firstTime) {
           mymap.setView([latitude, longitude], 2);
           firstTime = false;
         }
         document.getElementById('lat').textContent = latitude.toFixed(2);
         document.getElementById('lon').textContent = longitude.toFixed(2);
-        document.getElementById('altitude').textContent = altitude.toFixed(2);
       }
 
       getISS();
+
       setInterval(getISS, 1000);
     </script>
   </body>
