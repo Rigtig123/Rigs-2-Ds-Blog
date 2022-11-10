@@ -118,24 +118,21 @@ window.onload = wrap_img;
 
       const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
 
-      let firstTime = true;
-
-      async function WholeLottaISStings() {
+      async function getISS() {
         const response = await fetch(api_url);
         const data = await response.json();
         const { latitude, longitude } = data;
-        
-        }
+
+        marker.setLatLng([latitude, longitude]);
         document.getElementById('lat').textContent = latitude.toFixed(2);
         document.getElementById('lon').textContent = longitude.toFixed(2);
       }
 
-      gWholeLottaISStings();
-
-      setInterval(WholeLottaISStings, 1000);
+      getISS();
     </script>
   </body>
 </html>
+
 <p>Submenu
 <a href="">Javascript Turtorial</a> | <a href="">Agile Notes and Vocab</a> |</p>
 
