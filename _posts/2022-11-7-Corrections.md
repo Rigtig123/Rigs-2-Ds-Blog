@@ -1,14 +1,14 @@
 ---
 keywords: fastai
 description: Code.
-title: Quiz Code
+title: Tri 1 Corrections
 toc: true 
 badges: true
 comments: true
 categories: [jupyter]
 image: images/chart-preview.png
-nb_path: _notebooks/2022-09-13-Quiz.ipynb
-layout: notebook
+nb_path: _notebooks/2022-09-8-Youtube-Channel.ipynb
+layout: post
 ---
 # Tri 1 Corrections
 
