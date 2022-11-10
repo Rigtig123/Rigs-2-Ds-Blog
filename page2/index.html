@@ -72,7 +72,8 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home"><html lang="en">
+        <div class="home"><p>&lt;ht&lt;!DOCTYPE html&gt;</p>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=\, initial-scale=1.0" />
@@ -99,6 +100,11 @@ window.onload = wrap_img;
     <div id="issMap"></div>
 
     <script>
+      // Making a map and tiles
+      const mymap = L.map('issMap').setView([0, 0], 1);
+      const attribution =
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+
 
       // Making a marker with a custom icon
       const issIcon = L.icon({
