@@ -1,3 +1,15 @@
+---
+keywords: fastai
+description: Code.
+title: Quiz Code
+toc: true 
+badges: true
+comments: true
+categories: [jupyter]
+image: images/chart-preview.png
+nb_path: _notebooks/2022-09-13-Quiz.ipynb
+layout: notebook
+---
 # Tri 1 Corrections
 
 ![]({{site.baseurl}}/images/1.png "https://github.com/fastai/fastpages") 
