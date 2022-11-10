@@ -120,7 +120,7 @@ window.onload = wrap_img;
 
       let firstTime = true;
 
-      async function getISS() {
+      async function WholeLottaISStings() {
         const response = await fetch(api_url);
         const data = await response.json();
         const { latitude, longitude } = data;
@@ -130,13 +130,12 @@ window.onload = wrap_img;
         document.getElementById('lon').textContent = longitude.toFixed(2);
       }
 
-      getISS();
+      gWholeLottaISStings();
 
-      setInterval(getISS, 1000);
+      setInterval(WholeLottaISStings, 1000);
     </script>
   </body>
 </html>
-
 <p>Submenu
 <a href="">Javascript Turtorial</a> | <a href="">Agile Notes and Vocab</a> |</p>
 
