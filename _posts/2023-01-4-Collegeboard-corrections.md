@@ -1,6 +1,7 @@
 ---
 toc: true
 layout: post
+description: Collegeboard corrections using rubric
 categories: [Week 17]
 title: Collegeboard corrections using rubric 
 ---
