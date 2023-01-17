@@ -16,8 +16,8 @@ Corrections for Submission 1
  </tr>
  <tr>
    <td>Program Purpose and Function</td>
-   <td>1</td>
-   <td>1</td>
+   <td>0</td>
+   <td>0</td>
    <td> I put 0 because the information based on the triangle did not seem to make sense. After looking college board: I got it correct because The response does not specify the program’s purpose. Instead, it describes the function of theprogram, “to provide information about a triangle based on inputted side lengths.” Therefore, the response does not meet the program and purpose and function requirements </td>
  </tr>
  <tr>
@@ -116,7 +116,7 @@ Corrections for Submission 3
  <tr>
    <td>Program Purpose and Function</td>
    <td>1</td>
-   <td>1</td>
+   <td>0</td>
    <td> I initally thought got full points for this section, but in reality they didn’t earn the point because they didn’t have the purpose defined. </td>
  </tr>
  <tr>
