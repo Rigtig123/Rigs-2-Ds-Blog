@@ -1,3 +1,10 @@
+---
+toc: true
+layout: post
+description: Planning Preformance Task
+categories: [Week 17]
+title: College Board Corrections
+---
 
 I took this test with the help of Arnav. He had already taken the test but went out of his way to help me and he taught me a lot about certain variables and how to read code in general. As a result, I got a 44/50, the same as him.  
 
@@ -28,3 +35,5 @@ The sole reason I had no clue how to do this was I did not know the nessary voca
 Reflection
 
 Overall, I found these questions very rewarding because they were not incredibly hard where there was no point of doing them but they were not easy where I did not learn anything. It was a good balance between easy and hard. hese hacks were a bit challenging at first but with perserverance I was able to understand the concepts which allowed me to perform the hacks well. The fact I had a person better at coding then me helping me was great and I learned a lot from it. Out of all the tests, I was able to retain a lot more from this one then others. Overall it was good and it helped me become a better coder. 
+
+fr

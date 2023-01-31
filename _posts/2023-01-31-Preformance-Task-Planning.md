@@ -1,3 +1,11 @@
+---
+toc: true
+layout: post
+description: Planning Preformance Task
+categories: [Week 17]
+title: Planning Preformance Task
+---
+
 Create Performance Task Planning
 
 My task it to creat an API that updates day by day to show the stats of NBA players in order to predict their next stat line given their next game. 
