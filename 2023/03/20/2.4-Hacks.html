@@ -177,51 +177,6 @@ window.onload = wrap_img;
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">OperationalError</span>                          Traceback (most recent call last)
-<span class="ansi-green-fg">/var/folders/rb/cg1zlcqx3kd5jwkb_g7zw1980000gn/T/ipykernel_66387/3774255188.py</span> in <span class="ansi-cyan-fg">create_connection</span><span class="ansi-blue-fg">(db)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span>     <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg">         </span>connection <span class="ansi-blue-fg">=</span> sqlite3<span class="ansi-blue-fg">.</span>connect<span class="ansi-blue-fg">(</span>db<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span>         <span class="ansi-green-fg">return</span> connection
-
-<span class="ansi-red-fg">OperationalError</span>: unable to open database file
-
-During handling of the above exception, another exception occurred:
-
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/var/folders/rb/cg1zlcqx3kd5jwkb_g7zw1980000gn/T/ipykernel_66387/3774255188.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     37</span> 
-<span class="ansi-green-intense-fg ansi-bold">     38</span> <span class="ansi-green-fg">if</span> __name__ <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;__main__&#39;</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 39</span><span class="ansi-red-fg">     </span>main<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/var/folders/rb/cg1zlcqx3kd5jwkb_g7zw1980000gn/T/ipykernel_66387/3774255188.py</span> in <span class="ansi-cyan-fg">main</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">     27</span>                                         _weaknesses text NOT NULL
-<span class="ansi-green-intense-fg ansi-bold">     28</span>                                     ); &#34;&#34;&#34;
-<span class="ansi-green-fg">---&gt; 29</span><span class="ansi-red-fg">     </span>connection <span class="ansi-blue-fg">=</span> create_connection<span class="ansi-blue-fg">(</span>database<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     30</span> 
-<span class="ansi-green-intense-fg ansi-bold">     31</span>     <span class="ansi-red-fg"># create basketball table</span>
-
-<span class="ansi-green-fg">/var/folders/rb/cg1zlcqx3kd5jwkb_g7zw1980000gn/T/ipykernel_66387/3774255188.py</span> in <span class="ansi-cyan-fg">create_connection</span><span class="ansi-blue-fg">(db)</span>
-<span class="ansi-green-intense-fg ansi-bold">      6</span>         connection <span class="ansi-blue-fg">=</span> sqlite3<span class="ansi-blue-fg">.</span>connect<span class="ansi-blue-fg">(</span>db<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span>         <span class="ansi-green-fg">return</span> connection
-<span class="ansi-green-fg">----&gt; 8</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">except</span> Error <span class="ansi-green-fg">as</span> e<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      9</span>         print<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     10</span>     <span class="ansi-green-fg">return</span> connection
-
-<span class="ansi-red-fg">NameError</span>: name &#39;Error&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
@@ -270,6 +225,20 @@ During handling of the above exception, another exception occurred:
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>New basketball with James Harden is added.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -313,6 +282,21 @@ During handling of the above exception, another exception occurred:
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(1, &#39;Lebron James&#39;, &#39;American&#39;, &#39;Clutch&#39;, &#39;3pter&#39;)
+(2, &#39;James Harden&#39;, &#39;American&#39;, &#39;Passing&#39;, &#39;Defense&#39;)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -344,7 +328,7 @@ During handling of the above exception, another exception occurred:
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Updating review for the basketball</span>
-        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;UPDATE basketball SET _opinion = ? WHERE _id = ?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">weaknesses</span><span class="p">,</span> <span class="n">basketballId</span><span class="p">))</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;UPDATE basketball SET _weaknesses = ? WHERE _id = ?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">weaknesses</span><span class="p">,</span> <span class="n">basketballId</span><span class="p">))</span>
         <span class="k">if</span> <span class="n">cursor</span><span class="o">.</span><span class="n">rowcount</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Review for the basketball is updated to </span><span class="si">{</span><span class="n">weaknesses</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
@@ -362,6 +346,20 @@ During handling of the above exception, another exception occurred:
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Review for the basketball is updated to Shooting
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -410,6 +408,20 @@ During handling of the above exception, another exception occurred:
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Successfully deleted book with id 2
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
