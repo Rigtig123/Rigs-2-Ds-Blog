@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -298,6 +298,34 @@ KeyboardInterrupt
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">OperationalError</span>                          Traceback (most recent call last)
+<span class="ansi-green-fg">/var/folders/rb/cg1zlcqx3kd5jwkb_g7zw1980000gn/T/ipykernel_73546/3854437116.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     22</span>     conn<span class="ansi-blue-fg">.</span>close<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     23</span> 
+<span class="ansi-green-fg">---&gt; 24</span><span class="ansi-red-fg"> </span>read<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/var/folders/rb/cg1zlcqx3kd5jwkb_g7zw1980000gn/T/ipykernel_73546/3854437116.py</span> in <span class="ansi-cyan-fg">read</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      9</span> 
+<span class="ansi-green-intense-fg ansi-bold">     10</span>     <span class="ansi-red-fg"># Execute a SELECT statement to retrieve data from a table</span>
+<span class="ansi-green-fg">---&gt; 11</span><span class="ansi-red-fg">     </span>results <span class="ansi-blue-fg">=</span> cursor<span class="ansi-blue-fg">.</span>execute<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;SELECT * FROM users&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>fetchall<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     12</span> 
+<span class="ansi-green-intense-fg ansi-bold">     13</span>     <span class="ansi-red-fg"># Print the results</span>
+
+<span class="ansi-red-fg">OperationalError</span>: no such table: users</pre>
+</div>
+</div>
+
 </div>
 </div>
 
