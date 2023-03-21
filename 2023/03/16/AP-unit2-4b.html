@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -178,6 +178,80 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Traceback (most recent call last):
+  File &#34;_pydevd_bundle/pydevd_cython.pyx&#34;, line 1078, in _pydevd_bundle.pydevd_cython.PyDBFrame.trace_dispatch
+  File &#34;_pydevd_bundle/pydevd_cython.pyx&#34;, line 297, in _pydevd_bundle.pydevd_cython.PyDBFrame.do_wait_suspend
+  File &#34;/Users/lukeriggins/opt/anaconda3/lib/python3.9/site-packages/debugpy/_vendored/pydevd/pydevd.py&#34;, line 1976, in do_wait_suspend
+    keep_suspended = self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread, frames_tracker)
+  File &#34;/Users/lukeriggins/opt/anaconda3/lib/python3.9/site-packages/debugpy/_vendored/pydevd/pydevd.py&#34;, line 2011, in _do_wait_suspend
+    time.sleep(0.01)
+KeyboardInterrupt
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
+<span class="ansi-green-fg">/var/folders/rb/cg1zlcqx3kd5jwkb_g7zw1980000gn/T/ipykernel_73546/27105271.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     21</span>     conn<span class="ansi-blue-fg">.</span>close<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     22</span> 
+<span class="ansi-green-fg">---&gt; 23</span><span class="ansi-red-fg"> </span>schema<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/var/folders/rb/cg1zlcqx3kd5jwkb_g7zw1980000gn/T/ipykernel_73546/27105271.py</span> in <span class="ansi-cyan-fg">schema</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span> 
+<span class="ansi-green-intense-fg ansi-bold">      7</span>     <span class="ansi-red-fg"># Connect to the database file</span>
+<span class="ansi-green-fg">----&gt; 8</span><span class="ansi-red-fg">     </span>conn <span class="ansi-blue-fg">=</span> sqlite3<span class="ansi-blue-fg">.</span>connect<span class="ansi-blue-fg">(</span>database<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      9</span> 
+<span class="ansi-green-intense-fg ansi-bold">     10</span>     <span class="ansi-red-fg"># Create a cursor object to execute SQL queries</span>
+
+<span class="ansi-green-fg">/var/folders/rb/cg1zlcqx3kd5jwkb_g7zw1980000gn/T/ipykernel_73546/27105271.py</span> in <span class="ansi-cyan-fg">schema</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span> 
+<span class="ansi-green-intense-fg ansi-bold">      7</span>     <span class="ansi-red-fg"># Connect to the database file</span>
+<span class="ansi-green-fg">----&gt; 8</span><span class="ansi-red-fg">     </span>conn <span class="ansi-blue-fg">=</span> sqlite3<span class="ansi-blue-fg">.</span>connect<span class="ansi-blue-fg">(</span>database<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      9</span> 
+<span class="ansi-green-intense-fg ansi-bold">     10</span>     <span class="ansi-red-fg"># Create a cursor object to execute SQL queries</span>
+
+<span class="ansi-green-fg">_pydevd_bundle/pydevd_cython.pyx</span> in <span class="ansi-cyan-fg">_pydevd_bundle.pydevd_cython.SafeCallWrapper.__call__</span><span class="ansi-blue-fg">()</span>
+
+<span class="ansi-green-fg">_pydevd_bundle/pydevd_cython.pyx</span> in <span class="ansi-cyan-fg">_pydevd_bundle.pydevd_cython.PyDBFrame.trace_dispatch</span><span class="ansi-blue-fg">()</span>
+
+<span class="ansi-green-fg">_pydevd_bundle/pydevd_cython.pyx</span> in <span class="ansi-cyan-fg">_pydevd_bundle.pydevd_cython.PyDBFrame.trace_dispatch</span><span class="ansi-blue-fg">()</span>
+
+<span class="ansi-green-fg">_pydevd_bundle/pydevd_cython.pyx</span> in <span class="ansi-cyan-fg">_pydevd_bundle.pydevd_cython.PyDBFrame.trace_dispatch</span><span class="ansi-blue-fg">()</span>
+
+<span class="ansi-green-fg">_pydevd_bundle/pydevd_cython.pyx</span> in <span class="ansi-cyan-fg">_pydevd_bundle.pydevd_cython.PyDBFrame.do_wait_suspend</span><span class="ansi-blue-fg">()</span>
+
+<span class="ansi-green-fg">~/opt/anaconda3/lib/python3.9/site-packages/debugpy/_vendored/pydevd/pydevd.py</span> in <span class="ansi-cyan-fg">do_wait_suspend</span><span class="ansi-blue-fg">(self, thread, frame, event, arg, exception_type)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1974</span> 
+<span class="ansi-green-intense-fg ansi-bold">   1975</span>             <span class="ansi-green-fg">with</span> self<span class="ansi-blue-fg">.</span>_threads_suspended_single_notification<span class="ansi-blue-fg">.</span>notify_thread_suspended<span class="ansi-blue-fg">(</span>thread_id<span class="ansi-blue-fg">,</span> stop_reason<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 1976</span><span class="ansi-red-fg">                 </span>keep_suspended <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_do_wait_suspend<span class="ansi-blue-fg">(</span>thread<span class="ansi-blue-fg">,</span> frame<span class="ansi-blue-fg">,</span> event<span class="ansi-blue-fg">,</span> arg<span class="ansi-blue-fg">,</span> suspend_type<span class="ansi-blue-fg">,</span> from_this_thread<span class="ansi-blue-fg">,</span> frames_tracker<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1977</span> 
+<span class="ansi-green-intense-fg ansi-bold">   1978</span>         frames_list <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">None</span>
+
+<span class="ansi-green-fg">~/opt/anaconda3/lib/python3.9/site-packages/debugpy/_vendored/pydevd/pydevd.py</span> in <span class="ansi-cyan-fg">_do_wait_suspend</span><span class="ansi-blue-fg">(self, thread, frame, event, arg, suspend_type, from_this_thread, frames_tracker)</span>
+<span class="ansi-green-intense-fg ansi-bold">   2009</span> 
+<span class="ansi-green-intense-fg ansi-bold">   2010</span>             self<span class="ansi-blue-fg">.</span>process_internal_commands<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">-&gt; 2011</span><span class="ansi-red-fg">             </span>time<span class="ansi-blue-fg">.</span>sleep<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0.01</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   2012</span> 
+<span class="ansi-green-intense-fg ansi-bold">   2013</span>         self<span class="ansi-blue-fg">.</span>cancel_async_evaluation<span class="ansi-blue-fg">(</span>get_current_thread_id<span class="ansi-blue-fg">(</span>thread<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> str<span class="ansi-blue-fg">(</span>id<span class="ansi-blue-fg">(</span>frame<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">KeyboardInterrupt</span>: </pre>
+</div>
+</div>
+
 </div>
 </div>
 
