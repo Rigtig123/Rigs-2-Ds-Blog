@@ -37,5 +37,5 @@ Reflection/Takeaways
 
 After this class presentation John and Ashley gave, this experienced has really enlightened me on the next steps of computer science that is outside of highschool, and next steps moving onto college in general. It was very powerful to hear that they said computer science will apply to literally any major or career you choose in some type of way, which is what Mr. Mort has been preaching as well. What I really learned a lot was about internships and how to know which ones is good for you, preferably the paid ones, and that even if you don’t feel like your prepared for it, just do it anyways, experience is the most important part. As a senior, I can relate to the scholarships and going to college part the most as it is only a couple more months until that becomes reality. I realized how much Cal State San Marcos has to offer, and I know that there are other great schools out there like that where I can do the same things. Even though I don’t see myself pursuing a computer science major, I know that it is still useful to know about it because we live it, and that I can apply the many things I learn in this class and about computer science to my career that I choose.
 
-Subscribe
+
 
