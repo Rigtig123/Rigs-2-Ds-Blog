@@ -32,6 +32,11 @@ Corrections: I put C  which is Incorrect. The first call to drawLine draws a lin
 
 Corrections:  I put C which is Incorrect. Algorithm I does not work correctly. In algorithm I, if two people are tied for the earliest birthday, they both sit down when they are eventually paired. B is Correct. Algorithm I does not work correctly. In algorithm I, if two people are tied for the earliest birthday, they both sit down when they are eventually paired. Algorithm II works correctly. Because algorithm II allows both people to remain standing when there is a tie, a person with the earliest birthday is not eliminated. Algorithm II continues until all remaining people have the same birthday, which is the earliest birthday. Algorithm III does not work correctly. Algorithm III chooses the person(s) with the earliest day, disregarding the month. For example, algorithm III will incorrectly determine that a person born on February 1 has an earlier birthday than a person born on January 5.
 
+Reflection
+
+Overall, I did this test with one of my friends and we tried to work together to figure out the questions and this helped a lot and even allowed me to learn new concepts because my friend taught me some things I was unaware of and I did the same with him. This coding gave me new things to learn and incorporate into my code and overall I think taking this test helped a lot. 
+The usage of programs is very useful with databases. They help to be able to efficiently go through and get the data required. I learned the definition of heuristic solutions, how to deal with repeats and loops, and many other coding things that I can use when I try to code myself. The test took a long time also but there are a lot of different coding topics and languages that helped me and though the help of others, and looking up some of the answers to understand how to do certain things, I was able to take a lot from this experience and learn. 
+
 
 
 
