@@ -24,14 +24,19 @@ Corrections: I put A which A which is Incorrect. The first number displayed must
 
 ![]({{site.baseurl}}/images2/unit43.png "https://github.com/fastai/fastpages") 
 
-Corrections: 
+Corrections: I put C  which is Incorrect. The first call to drawLine draws a line segment with endpoints (1, 5) and (6, 5). The second call to drawLine draws a line segment with endpoints (1, 5) and (8, 7). The third call to drawLine draws a line segment with endpoints (1, 5) and (8, 3). B is Correct. This code segment draws the three line segments shown in the figure. The first call to drawLine draws a line segment with endpoints (1, 5) and (6, 5). The second call to drawLine draws a line segment with endpoints (1, 5) and (6, 7). The third call to drawLine draws a line segment with endpoints (1, 5) and (6, 3).
+
 
 
 ![]({{site.baseurl}}/images2/unit45.png "https://github.com/fastai/fastpages") 
 
-Corrections: 
+Corrections:  I put C which is Incorrect. Algorithm I does not work correctly. In algorithm I, if two people are tied for the earliest birthday, they both sit down when they are eventually paired. B is Correct. Algorithm I does not work correctly. In algorithm I, if two people are tied for the earliest birthday, they both sit down when they are eventually paired. Algorithm II works correctly. Because algorithm II allows both people to remain standing when there is a tie, a person with the earliest birthday is not eliminated. Algorithm II continues until all remaining people have the same birthday, which is the earliest birthday. Algorithm III does not work correctly. Algorithm III chooses the person(s) with the earliest day, disregarding the month. For example, algorithm III will incorrectly determine that a person born on February 1 has an earlier birthday than a person born on January 5.
 
 
-Corrections: 
+
+
+
+
+
 
 
