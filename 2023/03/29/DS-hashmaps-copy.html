@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      13 min read
+      15 min read
     
 </span></p>
 
@@ -667,7 +667,7 @@ producer: {'Frank Dukes', 'Louis Bell', 'Taylor Swift', 'Jack Antonoff', 'Joel L
     <span class="k">return</span> <span class="n">SavageMode2_album</span><span class="p">[</span><span class="s2">"song_lengths"</span><span class="p">][</span><span class="n">song_number</span><span class="p">]</span>
 
 <span class="c1"># Example usage</span>
-<span class="n">song_number</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">song_number</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="n">length</span> <span class="o">=</span> <span class="n">get_song_length</span><span class="p">(</span><span class="n">song_number</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The length of song </span><span class="si">{</span><span class="n">song_number</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">length</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 </pre></div>
@@ -682,7 +682,7 @@ producer: {'Frank Dukes', 'Louis Bell', 'Taylor Swift', 'Jack Antonoff', 'Joel L
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The length of song 5 is 3:07.
+<pre>The length of song 6 is 3:09.
 </pre>
 </div>
 </div>
@@ -919,6 +919,162 @@ song_lengths: {1: '2:12', 2: '3:16', 3: '2:59', 4: '4:08', 5: '3:07', 6: '3:09',
 </div>
     
 
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">'''CREATE TABLE IF NOT EXISTS song_opinions </span>
+<span class="s1">             (title text, opinion text, rating integer)'''</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;sqlite3.Cursor at 0x7fd8967647a0&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
+
+<span class="c1"># define the database connection and cursor</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">'song_opinions.db'</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="c1"># create a table to store the song opinions if it doesn't exist</span>
+<span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">'''CREATE TABLE IF NOT EXISTS song_opinions </span>
+<span class="s1">             (title text, opinion text, rating integer)'''</span><span class="p">)</span>
+
+<span class="c1"># define a function to search for a song and add an opinion and rating</span>
+<span class="k">def</span> <span class="nf">add_opinion</span><span class="p">():</span>
+    <span class="c1"># ask the user for the song title, their opinion, and their rating</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the title of the song: "</span><span class="p">)</span>
+    <span class="n">opinion</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your opinion of the song: "</span><span class="p">)</span>
+    <span class="n">rating</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your rating out of 10: "</span><span class="p">))</span>
+
+    <span class="c1"># search for the song in the album</span>
+    <span class="k">if</span> <span class="n">title</span> <span class="ow">in</span> <span class="n">SavageMode2_album</span><span class="p">[</span><span class="s1">'tracks'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="c1"># insert the title, opinion, and rating into the database</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"INSERT INTO song_opinions VALUES (?, ?, ?)"</span><span class="p">,</span> <span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">opinion</span><span class="p">,</span> <span class="n">rating</span><span class="p">))</span>
+        <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Opinion added to the database!"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Song not found in album."</span><span class="p">)</span>
+
+<span class="c1"># call the function to add an opinion</span>
+<span class="n">add_opinion</span><span class="p">()</span>
+
+<span class="c1"># close the database connection</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Opinion added to the database!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">delete_opinion</span><span class="p">():</span>
+    <span class="c1"># define the database connection and cursor</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">'song_opinions.db'</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    
+    <span class="c1"># ask the user for the title of the song to delete</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the title of the song to delete: "</span><span class="p">)</span>
+    
+    <span class="c1"># delete the row corresponding to the specified song title</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"DELETE FROM song_opinions WHERE title=?"</span><span class="p">,</span> <span class="p">(</span><span class="n">title</span><span class="p">,))</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    
+    <span class="c1"># check if any rows were deleted</span>
+    <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">rowcount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"No opinions found for that song title."</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">rowcount</span><span class="si">}</span><span class="s2"> opinion(s) deleted from the database."</span><span class="p">)</span>
+    
+    <span class="c1"># close the database connection</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># call the function to delete an opinion</span>
+<span class="n">delete_opinion</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1 opinion(s) deleted from the database.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>yer</p>
+
+</div>
+</div>
+</div>
 </div>
 
 
