@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      15 min read
+      16 min read
     
 </span></p>
 
@@ -909,6 +909,82 @@ song_lengths: {1: '2:12', 2: '3:16', 3: '2:59', 4: '4:08', 5: '3:07', 6: '3:09',
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>['Rap', 'Murder Music']
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Improved Version</p>
+<p>Here are a few suggestions for how I improved the code</p>
+<p>Use a loop to allow the user to perform multiple searches without exiting the program. This would make the program more user-friendly and efficient.</p>
+<p>Include error handling to catch any exceptions that may occur during runtime, such as if the user enters an invalid data type for the search parameter.</p>
+<p>Provide more information to the user about what kinds of searches are available, such as a list of valid search terms or a brief explanation of what the program can do.</p>
+<p>Consider using a more descriptive variable name than "search" to avoid confusion with the function name and improve readability.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">search_album</span><span class="p">(</span><span class="n">album_dict</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">search_term</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What would you like to know about the album? (type 'exit' to quit) "</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">search_term</span> <span class="o">==</span> <span class="s1">'exit'</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">album_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">search_term</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Invalid search term. Please try again."</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"An error occurred. Please try again."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Thanks for using the album search tool!"</span><span class="p">)</span>
+
+<span class="c1"># Example usage</span>
+<span class="n">SavageMode2_album</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'title'</span><span class="p">:</span> <span class="s1">'Savage Mode II'</span><span class="p">,</span>
+    <span class="s1">'artist'</span><span class="p">:</span> <span class="s1">'21 Savage and Metro Boomin'</span><span class="p">,</span>
+    <span class="s1">'release_date'</span><span class="p">:</span> <span class="s1">'October 2, 2020'</span><span class="p">,</span>
+    <span class="s1">'recorded'</span><span class="p">:</span> <span class="s1">'2020'</span><span class="p">,</span>
+    <span class="s1">'studio'</span><span class="p">:</span> <span class="s1">'Private studios in Atlanta, Georgia and Los Angeles, California'</span><span class="p">,</span>
+    <span class="s1">'genre'</span><span class="p">:</span> <span class="s1">'Hip hop, trap'</span><span class="p">,</span>
+    <span class="s1">'length'</span><span class="p">:</span> <span class="s1">'44:07'</span><span class="p">,</span>
+    <span class="s1">'label'</span><span class="p">:</span> <span class="s1">'Epic, Boominati, Republic'</span><span class="p">,</span>
+    <span class="s1">'producers'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Metro Boomin'</span><span class="p">,</span> <span class="s1">'21 Savage'</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">search_album</span><span class="p">(</span><span class="n">SavageMode2_album</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epic, Boominati, Republic
+44:07
+Invalid search term. Please try again.
+Invalid search term. Please try again.
+Thanks for using the album search tool!
 </pre>
 </div>
 </div>
