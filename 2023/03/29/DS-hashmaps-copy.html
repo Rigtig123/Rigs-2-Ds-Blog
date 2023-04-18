@@ -667,7 +667,7 @@ producer: {'Frank Dukes', 'Louis Bell', 'Taylor Swift', 'Jack Antonoff', 'Joel L
     <span class="k">return</span> <span class="n">SavageMode2_album</span><span class="p">[</span><span class="s2">"song_lengths"</span><span class="p">][</span><span class="n">song_number</span><span class="p">]</span>
 
 <span class="c1"># Example usage</span>
-<span class="n">song_number</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">song_number</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">length</span> <span class="o">=</span> <span class="n">get_song_length</span><span class="p">(</span><span class="n">song_number</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The length of song </span><span class="si">{</span><span class="n">song_number</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">length</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 </pre></div>
@@ -682,7 +682,7 @@ producer: {'Frank Dukes', 'Louis Bell', 'Taylor Swift', 'Jack Antonoff', 'Joel L
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The length of song 6 is 3:09.
+<pre>The length of song 5 is 3:07.
 </pre>
 </div>
 </div>
@@ -981,8 +981,7 @@ producer: {'Southside', 'Metro Boomin', 'Carlton Mays, Jr.', 'Oz Iskander 40'}
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Hip hop, trap
-Invalid search term. Please try again.
+<pre>44:07
 Thanks for using the album search tool!
 </pre>
 </div>
@@ -1014,12 +1013,16 @@ Thanks for using the album search tool!
 
 <div class="output_area">
 
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">/var/folders/rb/cg1zlcqx3kd5jwkb_g7zw1980000gn/T/ipykernel_87737/398191197.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> c.execute('''CREATE TABLE IF NOT EXISTS song_opinions 
+</span><span class="ansi-green-intense-fg ansi-bold">      2</span>              (title text, opinion text, rating integer)''')
 
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;sqlite3.Cursor at 0x7fd8968730a0&gt;</pre>
+<span class="ansi-red-fg">NameError</span>: name 'c' is not defined</pre>
 </div>
-
 </div>
 
 </div>
@@ -1266,7 +1269,7 @@ Thanks for using the album search tool!
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The video link for 'Runnin' is https://www.youtube.com/watch?v=ZZ6VhTBcc-c
+<pre>The video link for 'glockk im lapp' is https://www.youtube.com/watch?v=acYUqMd9k2I
 </pre>
 </div>
 </div>
