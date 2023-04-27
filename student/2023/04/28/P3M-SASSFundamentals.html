@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      17 min read
+      22 min read
     
 </span></p>
 
@@ -214,6 +214,19 @@ window.onload = wrap_img;
 <ul>
 <li>This is an example of CSS that can be used to change body text of an HTML document</li>
 <li>Hack Question:Can you guess what its changing style of the text to? </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This CSS code is changing the style of the body text in the HTML document in the following ways:</p>
+<ul>
+<li>Color: The color of the body text is being changed to blue (#0000FF).</li>
+<li>Font family: The font family of the body text is being changed to Arial, which is a sans-serif font. If Arial is not available on the user's device, then a generic sans-serif font will be used as a fallback.</li>
+<li>Font size: The font size of the body text is being set to 16 pixels</li>
 </ul>
 
 </div>
@@ -1187,6 +1200,374 @@ Fun Fact: Variables in SASS came before CSS and often SASS has features long bef
 <li>Using at least 3 or more sass features create a UI demo that may be used for future or current projects and reflect on how this was more effective than doing the same task using only regular features of CSS. Extra points will be awarded based on creativity and extra addition of features from SASS. </li>
 </ul>
 <p>Credits: Team Mortalicously Sassy 💖</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Reflection</p>
+<p>Sass (Syntactically Awesome Style Sheets) is a powerful CSS preprocessor that extends the capabilities of standard CSS, making it easier to write and maintain complex stylesheets. Here are some key features of Sass and how they compare to CSS:</p>
+<p>Variables: Sass allows you to define variables that can be reused throughout your stylesheet, making it easier to manage and update values consistently.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="err">$</span><span class="n">primary</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="c1">#4a4a4a;</span>
+
+<span class="n">body</span> <span class="p">{</span>
+  <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="err">$</span><span class="n">primary</span><span class="o">-</span><span class="n">color</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using Sass variables would have made it simpler to change color schemes or fonts in past projects, as you only need to update the variable value.</p>
+<p>Nesting: Sass supports nesting of CSS rules, making the code more organized and easier to read.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">nav</span> <span class="p">{</span>
+  <span class="n">ul</span> <span class="p">{</span>
+    <span class="n">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="nb">list</span><span class="o">-</span><span class="n">style</span><span class="p">:</span> <span class="n">none</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">li</span> <span class="p">{</span>
+    <span class="n">display</span><span class="p">:</span> <span class="n">inline</span><span class="o">-</span><span class="n">block</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">a</span> <span class="p">{</span>
+    <span class="n">display</span><span class="p">:</span> <span class="n">block</span><span class="p">;</span>
+    <span class="n">padding</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">10</span><span class="n">px</span><span class="p">;</span>
+    <span class="n">text</span><span class="o">-</span><span class="n">decoration</span><span class="p">:</span> <span class="n">none</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In previous projects, Sass nesting would have simplified the process of writing styles for nested elements like dropdown menus and modal windows.</p>
+<p>Partials and Imports: Sass allows you to create partial files (_partial.scss) that can be imported and combined into a single CSS file. This makes it easier to modularize and organize your styles.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">_variables</span><span class="o">.</span><span class="n">scss</span>
+<span class="err">$</span><span class="n">primary</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="c1">#4a4a4a;</span>
+
+<span class="o">//</span> <span class="n">_base</span><span class="o">.</span><span class="n">scss</span>
+<span class="n">body</span> <span class="p">{</span>
+  <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="err">$</span><span class="n">primary</span><span class="o">-</span><span class="n">color</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="n">main</span><span class="o">.</span><span class="n">scss</span>
+<span class="nd">@import</span> <span class="s1">'variables'</span><span class="p">;</span>
+<span class="nd">@import</span> <span class="s1">'base'</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>CSS does not have an equivalent feature, so developers often rely on multiple stylesheets or long, unorganized files.</p>
+<p>Mixins: Sass mixins are reusable chunks of code that can be included in your styles with custom parameters, making it easy to write DRY (Don't Repeat Yourself) code.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="nd">@mixin</span> <span class="n">transform</span><span class="p">(</span><span class="err">$</span><span class="nb">property</span><span class="p">)</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span><span class="p">:</span> <span class="err">$</span><span class="nb">property</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">ms</span><span class="o">-</span><span class="n">transform</span><span class="p">:</span> <span class="err">$</span><span class="nb">property</span><span class="p">;</span>
+  <span class="n">transform</span><span class="p">:</span> <span class="err">$</span><span class="nb">property</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">.</span><span class="n">box</span> <span class="p">{</span>
+  <span class="nd">@include</span> <span class="n">transform</span><span class="p">(</span><span class="n">rotate</span><span class="p">(</span><span class="mi">30</span><span class="n">deg</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In past projects, mixins could have simplified the implementation of vendor prefixes, responsive breakpoints, or custom animations.</p>
+<p>Functions and Control Directives: Sass supports functions and control directives like if, for, each, and while, which enable complex logic and calculations in your styles.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="nd">@function</span> <span class="n">grid</span><span class="o">-</span><span class="n">width</span><span class="p">(</span><span class="err">$</span><span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nd">@return</span> <span class="err">$</span><span class="n">n</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="mi">12</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">.</span><span class="n">col</span><span class="o">-</span><span class="mi">4</span> <span class="p">{</span>
+  <span class="n">width</span><span class="p">:</span> <span class="n">grid</span><span class="o">-</span><span class="n">width</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'%'</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>CSS does not support functions or control directives, so similar functionality would require manual calculations and updates.</p>
+<p>Using Sass in past projects would have made them easier to manage, maintain, and scale. The benefits include reusability, modularity, and better organization of styles, making it simpler to implement complex features and changes.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>SASS DEMO</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="o">/*</span> <span class="n">Variables</span> <span class="o">*/</span>
+<span class="err">$</span><span class="n">primary</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="c1">#ff5722;</span>
+<span class="err">$</span><span class="n">secondary</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="c1">#607d8b;</span>
+
+<span class="o">/*</span> <span class="n">Mixins</span> <span class="o">*/</span>
+<span class="nd">@mixin</span> <span class="n">team</span><span class="o">-</span><span class="n">card</span><span class="o">-</span><span class="n">style</span> <span class="p">{</span>
+  <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="c1">#fff;</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">2</span><span class="n">px</span> <span class="mi">10</span><span class="n">px</span> <span class="n">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
+  <span class="n">margin</span><span class="p">:</span> <span class="mi">20</span><span class="n">px</span> <span class="n">auto</span><span class="p">;</span>
+  <span class="nb">max</span><span class="o">-</span><span class="n">width</span><span class="p">:</span> <span class="mi">600</span><span class="n">px</span><span class="p">;</span>
+  <span class="n">overflow</span><span class="p">:</span> <span class="n">hidden</span><span class="p">;</span>
+
+  <span class="n">img</span> <span class="p">{</span>
+    <span class="n">width</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span><span class="p">;</span>
+    <span class="n">height</span><span class="p">:</span> <span class="n">auto</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="o">.</span><span class="n">team</span><span class="o">-</span><span class="n">info</span> <span class="p">{</span>
+    <span class="n">padding</span><span class="p">:</span> <span class="mi">20</span><span class="n">px</span><span class="p">;</span>
+
+    <span class="n">h2</span> <span class="p">{</span>
+      <span class="n">color</span><span class="p">:</span> <span class="err">$</span><span class="n">primary</span><span class="o">-</span><span class="n">color</span><span class="p">;</span>
+      <span class="n">margin</span><span class="o">-</span><span class="n">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">p</span> <span class="p">{</span>
+      <span class="n">color</span><span class="p">:</span> <span class="err">$</span><span class="n">secondary</span><span class="o">-</span><span class="n">color</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">ul</span> <span class="p">{</span>
+      <span class="nb">list</span><span class="o">-</span><span class="n">style</span><span class="p">:</span> <span class="n">none</span><span class="p">;</span>
+      <span class="n">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="n">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+
+      <span class="n">li</span> <span class="p">{</span>
+        <span class="n">color</span><span class="p">:</span> <span class="err">$</span><span class="n">secondary</span><span class="o">-</span><span class="n">color</span><span class="p">;</span>
+        <span class="n">margin</span><span class="o">-</span><span class="n">bottom</span><span class="p">:</span> <span class="mi">10</span><span class="n">px</span><span class="p">;</span>
+
+        <span class="o">&amp;</span><span class="p">:</span><span class="n">first</span><span class="o">-</span><span class="n">child</span> <span class="p">{</span>
+          <span class="n">margin</span><span class="o">-</span><span class="n">top</span><span class="p">:</span> <span class="mi">10</span><span class="n">px</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">/*</span> <span class="n">Global</span> <span class="n">styles</span> <span class="o">*/</span>
+<span class="n">body</span> <span class="p">{</span>
+  <span class="n">font</span><span class="o">-</span><span class="n">family</span><span class="p">:</span> <span class="n">Arial</span><span class="p">,</span> <span class="n">sans</span><span class="o">-</span><span class="n">serif</span><span class="p">;</span>
+  <span class="n">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="c1">#f5f5f5;</span>
+<span class="p">}</span>
+
+<span class="n">h1</span> <span class="p">{</span>
+  <span class="n">text</span><span class="o">-</span><span class="n">align</span><span class="p">:</span> <span class="n">center</span><span class="p">;</span>
+  <span class="n">color</span><span class="p">:</span> <span class="err">$</span><span class="n">primary</span><span class="o">-</span><span class="n">color</span><span class="p">;</span>
+  <span class="n">margin</span><span class="o">-</span><span class="n">top</span><span class="p">:</span> <span class="mi">50</span><span class="n">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">.</span><span class="n">team</span><span class="o">-</span><span class="n">card</span> <span class="p">{</span>
+  <span class="nd">@include</span> <span class="n">team</span><span class="o">-</span><span class="n">card</span><span class="o">-</span><span class="n">style</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">.</span><span class="n">team</span><span class="o">-</span><span class="n">card</span><span class="o">-</span><span class="n">large</span> <span class="p">{</span>
+  <span class="nd">@include</span> <span class="n">team</span><span class="o">-</span><span class="n">card</span><span class="o">-</span><span class="n">style</span><span class="p">;</span>
+  <span class="nb">max</span><span class="o">-</span><span class="n">width</span><span class="p">:</span> <span class="mi">800</span><span class="n">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">.</span><span class="n">team</span><span class="o">-</span><span class="n">card</span><span class="o">-</span><span class="n">medium</span> <span class="p">{</span>
+  <span class="nd">@include</span> <span class="n">team</span><span class="o">-</span><span class="n">card</span><span class="o">-</span><span class="n">style</span><span class="p">;</span>
+  <span class="nb">max</span><span class="o">-</span><span class="n">width</span><span class="p">:</span> <span class="mi">400</span><span class="n">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">NBA</span> <span class="n">Teams</span> <span class="n">Showcase</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s2">"stylesheet"</span> <span class="n">href</span><span class="o">=</span><span class="s2">"styles.css"</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">NBA</span> <span class="n">Teams</span> <span class="n">Showcase</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+
+    <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">"team-card"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">"images/lakers.jpg"</span> <span class="n">alt</span><span class="o">=</span><span class="s2">"Los Angeles Lakers logo"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">"team-info"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">Los</span> <span class="n">Angeles</span> <span class="n">Lakers</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Founded</span> <span class="ow">in</span> <span class="mi">1947</span><span class="p">,</span> <span class="n">the</span> <span class="n">Los</span> <span class="n">Angeles</span> <span class="n">Lakers</span> <span class="n">are</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">most</span> <span class="n">successful</span> <span class="n">franchises</span> <span class="ow">in</span> <span class="n">NBA</span> <span class="n">history</span><span class="p">,</span> <span class="k">with</span> <span class="mi">17</span> <span class="n">championships</span> <span class="n">to</span> <span class="n">their</span> <span class="n">name</span><span class="o">.</span> <span class="n">They</span> <span class="n">play</span> <span class="n">their</span> <span class="n">home</span> <span class="n">games</span> <span class="n">at</span> <span class="n">the</span> <span class="n">Staples</span> <span class="n">Center</span> <span class="ow">in</span> <span class="n">Los</span> <span class="n">Angeles</span><span class="p">,</span> <span class="n">California</span><span class="o">.&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Head</span> <span class="n">coach</span><span class="p">:</span> <span class="n">Frank</span> <span class="n">Vogel</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Star</span> <span class="n">player</span><span class="p">:</span> <span class="n">LeBron</span> <span class="n">James</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Record</span> <span class="p">(</span><span class="mi">2021</span><span class="o">-</span><span class="mi">2022</span> <span class="n">season</span><span class="p">):</span> <span class="mi">42</span><span class="o">-</span><span class="mi">40</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+    <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">"team-card"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">"images/warriors.jpg"</span> <span class="n">alt</span><span class="o">=</span><span class="s2">"Golden State Warriors logo"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">"team-info"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">Golden</span> <span class="n">State</span> <span class="n">Warriors</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">The</span> <span class="n">Golden</span> <span class="n">State</span> <span class="n">Warriors</span> <span class="n">are</span> <span class="n">a</span> <span class="n">professional</span> <span class="n">basketball</span> <span class="n">team</span> <span class="n">based</span> <span class="ow">in</span> <span class="n">San</span> <span class="n">Francisco</span><span class="p">,</span> <span class="n">California</span><span class="o">.</span> <span class="n">They</span> <span class="n">have</span> <span class="n">won</span> <span class="n">six</span> <span class="n">championships</span> <span class="ow">in</span> <span class="n">their</span> <span class="n">history</span><span class="p">,</span> <span class="n">including</span> <span class="n">three</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">last</span> <span class="n">six</span> <span class="n">years</span><span class="o">.</span> <span class="n">The</span> <span class="n">Warriors</span> <span class="n">play</span> <span class="n">their</span> <span class="n">home</span> <span class="n">games</span> <span class="n">at</span> <span class="n">the</span> <span class="n">Chase</span> <span class="n">Center</span> <span class="ow">in</span> <span class="n">San</span> <span class="n">Francisco</span><span class="o">.&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Head</span> <span class="n">coach</span><span class="p">:</span> <span class="n">Steve</span> <span class="n">Kerr</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Star</span> <span class="n">player</span><span class="p">:</span> <span class="n">Stephen</span> <span class="n">Curry</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Record</span> <span class="p">(</span><span class="mi">2021</span><span class="o">-</span><span class="mi">2022</span> <span class="n">season</span><span class="p">):</span> <span class="mi">48</span><span class="o">-</span><span class="mi">34</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+    <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">"team-card"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">"images/bulls.jpg"</span> <span class="n">alt</span><span class="o">=</span><span class="s2">"Chicago Bulls logo"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">"team-info"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">Chicago</span> <span class="n">Bulls</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">The</span> <span class="n">Chicago</span> <span class="n">Bulls</span> <span class="n">are</span> <span class="n">a</span> <span class="n">professional</span> <span class="n">basketball</span> <span class="n">team</span> <span class="n">based</span> <span class="ow">in</span> <span class="n">Chicago</span><span class="p">,</span> <span class="n">Illinois</span><span class="o">.</span> <span class="n">They</span> <span class="n">have</span> <span class="n">won</span> <span class="n">six</span> <span class="n">championships</span> <span class="ow">in</span> <span class="n">their</span> <span class="n">history</span><span class="p">,</span> <span class="nb">all</span> <span class="n">during</span> <span class="n">the</span> <span class="mi">1990</span><span class="n">s</span><span class="o">.</span> <span class="n">The</span> <span class="n">Bulls</span> <span class="n">play</span> <span class="n">their</span> <span class="n">home</span> <span class="n">games</span> <span class="n">at</span> <span class="n">the</span> <span class="n">United</span> <span class="n">Center</span> <span class="ow">in</span> <span class="n">Chicago</span><span class="o">.&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Head</span> <span class="n">coach</span><span class="p">:</span> <span class="n">Billy</span> <span class="n">Donovan</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Star</span> <span class="n">player</span><span class="p">:</span> <span class="n">Zach</span> <span class="n">LaVine</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Record</span> <span class="p">(</span><span class="mi">2021</span><span class="o">-</span><span class="mi">2022</span> <span class="n">season</span><span class="p">):</span> <span class="mi">42</span><span class="o">-</span><span class="mi">40</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+    <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">"team-card"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">"images/Heat.jpg"</span> <span class="n">alt</span><span class="o">=</span><span class="s2">"Miami Heat logo"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">"team-info"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">Miami</span> <span class="n">Heat</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">The</span> <span class="n">Miami</span> <span class="n">Heat</span> <span class="n">are</span> <span class="n">a</span> <span class="n">professional</span> <span class="n">basketball</span> <span class="n">team</span> <span class="n">based</span> <span class="ow">in</span> <span class="n">Miami</span><span class="p">,</span> <span class="n">Florida</span><span class="o">.</span> <span class="n">They</span> <span class="n">have</span> <span class="n">won</span> <span class="n">three</span> <span class="n">championships</span> <span class="ow">in</span> <span class="n">their</span> <span class="n">history</span><span class="p">,</span> <span class="n">including</span> <span class="n">back</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">back</span> <span class="n">titles</span> <span class="ow">in</span> <span class="mi">2012</span> <span class="ow">and</span> <span class="mf">2013.</span> <span class="n">The</span> <span class="n">Heat</span> <span class="n">play</span> <span class="n">their</span> <span class="n">home</span> <span class="n">games</span> <span class="n">at</span> <span class="n">the</span> <span class="n">American</span> <span class="n">Airlines</span> <span class="n">Arena</span> <span class="ow">in</span> <span class="n">Miami</span><span class="o">.&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Head</span> <span class="n">coach</span><span class="p">:</span> <span class="n">Erik</span> <span class="n">Spoelstra</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Star</span> <span class="n">player</span><span class="p">:</span> <span class="n">Jimmy</span> <span class="n">Butler</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Record</span> <span class="p">(</span><span class="mi">2021</span><span class="o">-</span><span class="mi">2022</span> <span class="n">season</span><span class="p">):</span> <span class="mi">35</span><span class="o">-</span><span class="mi">47</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+  <span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I will link my project that works in my issue fr</p>
 
 </div>
 </div>
